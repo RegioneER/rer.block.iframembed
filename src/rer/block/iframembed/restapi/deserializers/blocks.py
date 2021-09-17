@@ -34,7 +34,7 @@ class HTMLBlockDeserializerBase:
             if url_to_embed.find(domain) != -1:
                 authorized = True
                 break
-                
+
         if not authorized:
             msg = "L'url indicato non e' valido per i domini ammessi"
             raise BadRequest(msg)

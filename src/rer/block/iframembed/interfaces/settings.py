@@ -2,7 +2,6 @@
 from rer.block.iframembed import _
 from plone.restapi.controlpanels.interfaces import IControlpanel
 from zope.interface import Interface
-from zope.interface import Invalid
 from zope import schema
 
 
