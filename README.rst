@@ -2,11 +2,11 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://travis-ci.org/collective/rer.block.iframembed.svg?branch=master
-    :target: https://travis-ci.org/collective/rer.block.iframembed
+.. image:: https://travis-ci.org/RegioneER/rer.block.iframembed.svg?branch=master
+    :target: https://travis-ci.org/RegioneER/rer.block.iframembed
 
-.. image:: https://coveralls.io/repos/github/collective/rer.block.iframembed/badge.svg?branch=master
-    :target: https://coveralls.io/github/collective/rer.block.iframembed?branch=master
+.. image:: https://coveralls.io/repos/github/RegioneER/rer.block.iframembed/badge.svg?branch=master
+    :target: https://coveralls.io/github/RegioneER/rer.block.iframembed?branch=master
     :alt: Coveralls
 
 .. image:: https://img.shields.io/pypi/v/rer.block.iframembed.svg
@@ -28,33 +28,12 @@
 rer.block.iframembed
 ====================
 
-Tell me what your product does
+A block which embeds external url inside an iframe
 
 Features
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+- Domains validation
 
 
 Installation
@@ -76,8 +55,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/rer.block.iframembed/issues
-- Source Code: https://github.com/collective/rer.block.iframembed
+- Issue Tracker: https://github.com/RegioneER/rer.block.iframembed/issues
+- Source Code: https://github.com/RegioneER/rer.block.iframembed
 - Documentation: https://docs.plone.org/foo/bar
 
 
