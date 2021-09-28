@@ -7,6 +7,7 @@ from zope.component import adapter
 from zope.interface import implementer
 from zope.publisher.interfaces.browser import IBrowserRequest
 
+import lxml.html
 import os
 
 
@@ -21,27 +22,44 @@ class HTMLBlockDeserializerBase:
         self.request = request
 
     def __call__(self, block):
-
         portal_transforms = api.portal.get_tool(name="portal_transforms")
-        url_to_embed = block.get("html", "")
+        html_text = block.get("html", "")
 
-        valid_domains = api.portal.get_registry_record(
-            'available_domains',
-            interface=IRerBlockIframembedSettings)
+        doc = lxml.html.fromstring(html_text)
+        if doc.xpath('//iframe'):
+            url_to_embed = doc.xpath('//iframe')[0].attrib.get('src')
 
-        authorized = False
-        for domain in valid_domains:
-            if url_to_embed.find(domain) != -1:
-                authorized = True
-                break
+            if not url_to_embed:
+                msg = "Occorre fornire un url associato all'iframe"
+                raise BadRequest(msg)
 
-        if not authorized:
-            msg = "L'url indicato non e' valido per i domini ammessi"
-            raise BadRequest(msg)
+            skip_domain_check = False
+            current = api.user.get_current()
+            if api.user.has_permission('Manage portal', username=current.getUserName()):
+                skip_domain_check = True
 
-        data = portal_transforms.convertTo(
-            "text/x-html-safe", url_to_embed, mimetype="text/html"
-        )
+            if not skip_domain_check:
+                valid_domains = api.portal.get_registry_record(
+                    'available_domains',
+                    interface=IRerBlockIframembedSettings)
+
+                authorized = False
+                for domain in valid_domains:
+                    if url_to_embed.find(domain) != -1:
+                        authorized = True
+                        break
+
+                if not authorized:
+                    msg = "L'url indicato non e' valido per i domini ammessi"
+                    raise BadRequest(msg)
+
+            data = portal_transforms.convertTo(
+                "text/x-html-safe", html_text, mimetype="text/html"
+            )
+        else:
+            data = portal_transforms.convertTo(
+                "text/x-html-safe", html_text, mimetype="text/html"
+            )
 
         html = data.getData()
         block["html"] = html
