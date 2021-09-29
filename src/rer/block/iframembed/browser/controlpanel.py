@@ -7,7 +7,7 @@ from rer.block.iframembed import _
 class IRerBlockIframembedForm(controlpanel.RegistryEditForm):
 
     schema = IRerBlockIframembedSettings
-    label = _("rer_block_iframembed_settings_label", default=u"Block iframembed settings")
+    label = _("rer_block_iframembed_settings_label", default=u"Iframe domain settings")
 
 
 class RerBlockIframembedSettings(controlpanel.ControlPanelFormWrapper):

@@ -6,7 +6,7 @@
     purge="False">
 
     <configlet
-        title="Block iframembed settings"
+        title="Iframe domain settings"
         action_id="RerBblockIframembedSettings"
         appId="rer.block.iframembed"
         category="Products"
