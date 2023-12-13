@@ -6,5 +6,4 @@
   <include package=".services"  />
   <include package=".deserializers" />
 
-
 </configure>

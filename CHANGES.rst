@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Handle also iframe block.
+  [cekk]
 
 
 1.0.0 (2023-03-13)
