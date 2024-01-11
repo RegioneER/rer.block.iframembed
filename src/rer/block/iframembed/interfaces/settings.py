@@ -9,11 +9,13 @@ class IRerBlockIframembedSettings(Interface):
     """Interface for RerBlockIframembed controlpanel"""
 
     available_domains = schema.Tuple(
-        title=_(u'Domini consentiti'),
-        description=_(u"Inserire i domini consentiti."),
+        title=_("available_domains", default="Available domains"),
+        description=_(
+            "available_domains_help",
+            default="Insert a list of available domains. One per line.",
+        ),
         missing_value=None,
-
-        value_type=schema.TextLine()
+        value_type=schema.TextLine(),
     )
 
 
