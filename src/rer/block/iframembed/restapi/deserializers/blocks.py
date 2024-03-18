@@ -58,7 +58,7 @@ class HTMLBlockDeserializerBase(DeserializerBase):
                 msg = "Occorre fornire un url associato all'iframe"
                 raise BadRequest(msg)
             if not self.is_allowed_url(url=url_to_embed):
-                raise BadRequest(self.msg)
+                raise BadRequest(api.portal.translate(self.msg))
 
         data = portal_transforms.convertTo(
             "text/x-html-safe", html_text, mimetype="text/html"

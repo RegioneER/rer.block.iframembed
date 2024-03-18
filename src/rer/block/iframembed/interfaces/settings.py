@@ -16,6 +16,7 @@ class IRerBlockIframembedSettings(Interface):
         ),
         missing_value=None,
         value_type=schema.TextLine(),
+        required=False,
     )
 
 
