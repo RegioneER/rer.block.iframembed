@@ -27,6 +27,8 @@ class DeserializerBase:
         valid_domains = api.portal.get_registry_record(
             "available_domains", interface=IRerBlockIframembedSettings
         )
+        if not valid_domains:
+            return False
         for domain in valid_domains:
             if url.startswith(domain):
                 return True
