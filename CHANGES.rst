@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.2 (unreleased)
+1.0.2 (2024-03-27)
 ------------------
 
 - If no domains are set, everything is invalid.
