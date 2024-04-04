@@ -5,7 +5,8 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use env variable "disable_iframe_domains" to force disable validation.
+  [cekk]
 
 
 1.0.2 (2024-03-27)

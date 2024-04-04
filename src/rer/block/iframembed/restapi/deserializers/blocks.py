@@ -24,6 +24,12 @@ class DeserializerBase:
         self.request = request
 
     def is_allowed_url(self, url):
+        disabled = os.environ.get("disable_iframe_domains", "False").lower() in (
+            "1",
+            "true",
+        )
+        if disabled:
+            return True
         valid_domains = api.portal.get_registry_record(
             "available_domains", interface=IRerBlockIframembedSettings
         )
@@ -46,7 +52,6 @@ class IframeBlockDeserializerBase(DeserializerBase):
 
 class HTMLBlockDeserializerBase(DeserializerBase):
     block_type = "html"
-    disabled = os.environ.get("disable_transform_html", False)
 
     def __call__(self, block):
         portal_transforms = api.portal.get_tool(name="portal_transforms")
