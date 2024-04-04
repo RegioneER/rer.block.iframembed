@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.3 (unreleased)
+1.0.3 (2024-04-04)
 ------------------
 
 - Use env variable "disable_iframe_domains" to force disable validation.
