@@ -18,7 +18,7 @@ msgstr ""
 "Domain: rer.block.iframembed\n"
 
 #: rer/block/iframembed/profiles/default/controlpanel.xml
-msgid "Iframe domain settings"
+msgid "RER iframe domain"
 msgstr ""
 
 #: rer/block/iframembed/configure.zcml:24

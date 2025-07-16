@@ -5,7 +5,8 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix controlpanel label.
+  [cekk]
 
 
 1.0.3 (2024-04-04)
